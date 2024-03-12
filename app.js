@@ -1,23 +1,22 @@
 require('@babel/register');
-const express = require('express');
-const React = require('react');
-const ReactDOMServer = require('react-dom/server');
-const Layout = require('./Model');
 
+const express = require('express');
+
+/**
+ * Routes
+*/
+const shopRoute = require('./routes/views/shop.route');
+/**
+ * Middlewares
+ */
 const app = express();
+
+const ssr = require('./middleware/ssr');
+
 const PORT = process.env.PORT ?? 3000;
 
-app.get('/', (req, res) => {
-  // res.send('nudes');
-  const home = React.createElement(Layout, {
-    title: 'My site',
-    name: 'John',
-  });
+app.use(ssr);
 
-  const html = ReactDOMServer.renderToStaticMarkup(home);
-
-  const document = `<!DOCTYPE html>${html}`;
-  res.send(document);
-});
+app.use('/', shopRoute);
 
 app.listen(PORT, () => { console.log('Сервер работает, порт', PORT); });

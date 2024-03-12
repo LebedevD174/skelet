@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Layout({ title, name }) {
+module.exports = function Layout({ title, children }) {
   return (
     <html lang="en">
       <head>
@@ -8,7 +8,7 @@ module.exports = function Layout({ title, name }) {
         {/* <link rel="stylesheet" href="/css/style.css" />
         <script src="/js/script.js" /> */}
       </head>
-      <body>{name}</body>
+      <body>{children}</body>
     </html>
   );
 };
