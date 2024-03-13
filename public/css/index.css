@@ -7,13 +7,17 @@
 
 * {
   font-family: IBM Plex Mono;
+  font-size: 18px;
 }
 
-.flex,
-h1 {
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -28,11 +32,17 @@ h1 {
 }
 
 .head {
-  height: 180px;
+  height: 100px;
+  justify-content: space-evenly;
+
+  background-color: dimgray;
+}
+.head div a {
+  color: #f0f0f0;
 }
 
-#input {
-  width: 500px;
+input {
+  width: 200px;
   height: 56px;
   border: 2px solid var(--btn-add-border-color);
   border-radius: 14px;
@@ -40,12 +50,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-#input_field {
-  width: 80%;
-  height: 95%;
-}
-
-#input_btn {
+.btn {
   width: 18%px;
   height: 38px;
   border-radius: 8px;
@@ -57,11 +62,26 @@ h1 {
   margin-left: 5px;
 }
 
-.dictionary {
+.category {
   width: 500px;
   border-radius: 15px;
+  border: solid 2px black;
+  background-color: var(--btn-text-color);
+  color: var(--name-color);
   overflow: hidden;
   z-index: 0;
+  margin-left: 20px;
+}
+
+.category a {
+  color: var(--name-color);
+  padding: 5;
+  margin: 5;
+}
+
+#input_field {
+  width: 80%;
+  height: 95%;
 }
 
 li {

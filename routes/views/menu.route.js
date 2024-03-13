@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const Shop = require('../../components/Shop');
-const Layout = require('../../components/Layout')
-const Categories = require('../../components/Category')
+const Shop = require('../../components/pages/Shop');
+const Layout = require('../../components/Layout');
+const Categories = require('../../components/pages/Category');
 const { Product, Category } = require('../../db/models');
 // const Form = require('../../components/Form');
 
 router.get('/', async (req, res) => {
-  const content = 'Добро пожаловать в наш магазин, выберите категорию'
+  const content = 'Добро пожаловать в наш магазин, выберите категорию';
   const html = res.renderComponent(Layout, {
     heading: 'Главная страница',
-    content
+    content,
   });
     //   console.log(html)
   res.send(html);

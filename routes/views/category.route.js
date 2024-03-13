@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const CategoryPage = require('../../components/Category');
-const shopPage = require('../../components/Shop');
+const CategoryPage = require('../../components/pages/Category');
+const shopPage = require('../../components/pages/Shop');
 const { Category, Product } = require('../../db/models');
 // const Form = require('../../components/Form');
 

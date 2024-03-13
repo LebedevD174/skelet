@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // const CategoryPage = require('../../components/Category');
-const shopPage = require('../../components/Shop');
-const Form = require('../../components/FormAddProduct');
+const shopPage = require('../../components/pages/Shop');
+const Form = require('../../components/pages/FormAddProduct');
 const { Category, Product } = require('../../db/models');
 
 router.get('/', async (req, res) => {

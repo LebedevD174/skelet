@@ -1,14 +1,13 @@
 const React = require('react');
-const Layout = require('./Layout');
-const Product = require('./Product');
+const Layout = require('../Layout');
+const Product = require('../ui/Product');
 
 module.exports = function Shop({ heading, prods }) {
   return (
     <Layout title="Shop">
-      <h2>{heading}</h2>
-      <div style={{
-        display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', padding: 10, marginBottom: 10,
-      }} className='container'
+      <h1>{heading}</h1>
+      <div
+        className="container flex wrap"
       >
         {prods.map((prod) => (
           <div key={prod.id}>
