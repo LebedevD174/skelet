@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params;
     const prods = await Product.findAll({ where: { category_id: id } });
     const html = res.renderComponent(shopPage, {
-      heading: `Продукты категория: ${categories[id - 1].name}`,
+      heading: `${categories[id - 1].name}`,
       prods,
     });
     res.send(html);
