@@ -9,6 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dbr": "npx sequelize-cli db:drop && npx   sequelize-cli db:create &&  npx sequelize-cli db:migrate && npx   sequelize-cli db:seed:all "
   },
+  "nodemonConfig": {
+    "ext": "js, json, hbs, html, jsx"
+  },
   "keywords": [],
   "author": "Lebedev",
   "dependencies": {

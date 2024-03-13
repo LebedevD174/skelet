@@ -1,0 +1,170 @@
+:root {
+  --name-color: #4520ab;
+  --btn-add-border-color: #111111;
+  --btn-text-color: #ffffff;
+  --original-text-color: #f0f0f0;
+}
+
+* {
+  font-family: IBM Plex Mono;
+}
+
+.flex,
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--name-color);
+}
+
+.column {
+  flex-direction: column;
+}
+
+.head {
+  height: 180px;
+}
+
+#input {
+  width: 500px;
+  height: 56px;
+  border: 2px solid var(--btn-add-border-color);
+  border-radius: 14px;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+#input_field {
+  width: 80%;
+  height: 95%;
+}
+
+#input_btn {
+  width: 18%px;
+  height: 38px;
+  border-radius: 8px;
+  padding: 0px 12px 5px 12px;
+  background-color: var(--btn-add-border-color);
+  color: var(--btn-text-color);
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.dictionary {
+  width: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+li {
+  width: 250px;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.original li,
+.translation li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.original li {
+  background-color: var(--original-text-color);
+  border-right: 2px solid #000000;
+}
+
+ol img {
+  display: none;
+}
+
+ul .index {
+  display: none;
+}
+
+.translation li {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+li img {
+  transform: scale(0.8);
+}
+
+#index1 {
+  visibility: hidden;
+}
+
+.word {
+  flex-basis: 80%;
+  position: relative;
+}
+
+#clear_btn {
+  justify-content: center;
+  margin-top: 40px;
+  background-color: #adadad;
+  width: 176px;
+  height: 38px;
+  border-radius: 8px;
+}
+
+#clear_btn span {
+  margin-left: 10px;
+}
+
+.tip {
+  background-color: var(--btn-text-color);
+  color: var(--btn-add-border-color);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: -9px;
+  display: none;
+  padding: 8px 16px 10px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  box-shadow: 0px 4px 10% 0 black;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .head {
+    height: 80px;
+  }
+
+  #input,
+  .dictionary,
+  li {
+    width: 328px;
+  }
+
+  .original li {
+    border-right: none;
+  }
+
+  .original {
+    border-bottom: 2px solid #000000;
+  }
+
+  .dictionary {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ol img,
+  ul .index {
+    display: block;
+  }
+}

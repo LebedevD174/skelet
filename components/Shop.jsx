@@ -7,8 +7,8 @@ module.exports = function Shop({ heading, prods }) {
     <Layout title="Shop">
       <h2>{heading}</h2>
       <div style={{
-        display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', padding: 10, margin: 10,
-      }}
+        display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', padding: 10, marginBottom: 10,
+      }} className='container'
       >
         {prods.map((prod) => (
           <div key={prod.id}>
