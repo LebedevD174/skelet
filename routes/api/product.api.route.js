@@ -11,11 +11,11 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id/update', async (req, res) => {
   const { id } = req.params;
-  const { name, img, content } = req.body;
+  const { name, price, category_id } = req.body;
   try {
-    const data = await Tweet.update({ name, img, content }, { where: { id } });
+    const data = await Product.update({ name, price, category_id }, { where: { id } });
     res.status(200).json({ message: 'success', data });
   } catch (error) {
     res.json({ message: 'Не твоя', error });

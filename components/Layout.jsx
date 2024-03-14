@@ -13,7 +13,7 @@ module.exports = function Layout({ title, children }) {
         <Navbar />
         {children}
       </body>
-      <script src="/scripts/delete.js" defer />
+      <script src="/scripts/product.js" defer />
     </html>
   );
 };

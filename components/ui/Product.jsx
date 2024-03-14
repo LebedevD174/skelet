@@ -21,7 +21,7 @@ module.exports = function Product({ product }) {
         {`Цена: ${price}руб.`}
       </div>
       <div>
-        <Button name="Редактировать" classes="reduct"/>
+        <Button name="Редактировать" classes="reduct" hrefItem={`/product/${id}/update`}/>
         <Button name="Удалить" classes="delete" />
       </div>
     </div>

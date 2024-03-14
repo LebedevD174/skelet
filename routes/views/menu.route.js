@@ -3,7 +3,7 @@ const Shop = require('../../components/pages/Shop');
 const Layout = require('../../components/Layout');
 const Categories = require('../../components/pages/Category');
 const { Product, Category } = require('../../db/models');
-// const Form = require('../../components/Form');
+const FormUp = require('../../components/pages/FormUpdateProduct');
 
 router.get('/', async (req, res) => {
   const content = 'Добро пожаловать в наш магазин, выберите категорию';
@@ -24,16 +24,21 @@ router.get('/products', async (req, res) => {
   //   console.log(html)
   res.send(html);
 });
-// router.get('/categories', async (req, res) => {
-//   const categories = await Category.findAll();
-//   console.log(categories);
-//   const html = res.renderComponent(Categories, {
-//     heading: 'Категории',
-//     categories,
-//   });
-//   //   console.log(html)
-//   res.send(html);
-// });
+
+router.get('/product/:id/update', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findOne({ where: { id } });
+    const html = res.renderComponent(FormUp, {
+      title: 'Редактировать продукт',
+      product,
+    });
+    res.send(html);
+  } catch ({ message }) {
+    console.log(message);
+  }
+});
+
 router.get('/orders', async (req, res) => {
   const orders = await Category.findAll();
   const html = res.renderComponent(Shop, {

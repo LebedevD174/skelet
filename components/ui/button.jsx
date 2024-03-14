@@ -1,10 +1,13 @@
 const React = require('react');
 
-module.exports = function Button({ name, classes }) {
-  console.log({classes});
+module.exports = function Button({ name, classes, hrefItem ={} }) {
+  console.log({ classes });
   return (
-    <button className={`btn `+classes}>
-      {name}
+    <button className={`btn ${classes}`}>
+      <a href={hrefItem}>
+        {name}
+      </a>
+
     </button>
   );
 };
